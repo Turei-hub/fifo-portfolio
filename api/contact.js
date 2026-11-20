@@ -1,9 +1,9 @@
 // Vercel serverless function: POST /api/contact
-// Sends the contact form to your inbox through SendGrid.
+// Sends the contact form to your inbox through Brevo (free plan).
 // Env vars (Vercel → Project → Settings → Environment Variables):
-//   SENDGRID_API_KEY  your SendGrid API key
-//   CONTACT_TO        where messages go, e.g. milner.turei@gmail.com
-//   CONTACT_FROM      a sender address verified in SendGrid
+//   BREVO_API_KEY  your Brevo API key (SMTP & API → API Keys)
+//   CONTACT_TO     where messages go, e.g. milner.turei@gmail.com
+//   CONTACT_FROM   sender on your Brevo-authenticated domain, e.g. portfolio@kaupekadigital.com
 
 const clean = (v, max) => String(v ?? '').trim().slice(0, max)
 const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
@@ -31,9 +31,9 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Please fill in your name, a valid email and a message' })
   }
 
-  const { SENDGRID_API_KEY, CONTACT_TO, CONTACT_FROM } = process.env
-  if (!SENDGRID_API_KEY || !CONTACT_TO || !CONTACT_FROM) {
-    console.error('Contact form is missing SENDGRID_API_KEY, CONTACT_TO or CONTACT_FROM')
+  const { BREVO_API_KEY, CONTACT_TO, CONTACT_FROM } = process.env
+  if (!BREVO_API_KEY || !CONTACT_TO || !CONTACT_FROM) {
+    console.error('Contact form is missing BREVO_API_KEY, CONTACT_TO or CONTACT_FROM')
     return res.status(500).json({ error: 'Contact form is not set up yet' })
   }
 
@@ -45,20 +45,20 @@ export default async function handler(req, res) {
     message,
   ].join('\n')
 
-  const sg = await fetch('https://api.sendgrid.com/v3/mail/send', {
+  const r = await fetch('https://api.brevo.com/v3/smtp/email', {
     method: 'POST',
-    headers: { Authorization: `Bearer ${SENDGRID_API_KEY}`, 'Content-Type': 'application/json' },
+    headers: { 'api-key': BREVO_API_KEY, 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify({
-      personalizations: [{ to: [{ email: CONTACT_TO }] }],
-      from: { email: CONTACT_FROM, name: 'FIFO Portfolio' },
-      reply_to: { email, name },
+      sender: { name: 'FIFO Portfolio', email: CONTACT_FROM },
+      to: [{ email: CONTACT_TO }],
+      replyTo: { email, name },
       subject: `Portfolio enquiry from ${name}${company ? ` (${company})` : ''}`,
-      content: [{ type: 'text/plain', value: text }],
+      textContent: text,
     }),
   })
 
-  if (!sg.ok) {
-    console.error('SendGrid error', sg.status, await sg.text())
+  if (!r.ok) {
+    console.error('Brevo error', r.status, await r.text())
     return res.status(502).json({ error: 'Email service error' })
   }
 

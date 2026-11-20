@@ -25,10 +25,10 @@ Images live in `public/img/`.
 ## Deploy on Vercel
 
 1. vercel.com → **Add New → Project** → import `Turei-hub/fifo-portfolio`. Vercel detects Vite; keep the defaults.
-2. **Settings → Environment Variables**, add the three from `.env.example` for the contact form:
-   - `SENDGRID_API_KEY`
+2. **Settings → Environment Variables**, add the three from `.env.example` for the contact form (sent through Brevo's free plan):
+   - `BREVO_API_KEY` (Brevo → SMTP & API → API Keys)
    - `CONTACT_TO` (where messages land)
-   - `CONTACT_FROM` (a sender verified in SendGrid)
+   - `CONTACT_FROM` (an address on a Brevo-authenticated domain, e.g. `portfolio@kaupekadigital.com`)
 3. Redeploy. Every push to `main` deploys automatically.
 
 ## Custom domain
