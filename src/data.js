@@ -224,7 +224,7 @@ export const projects = [
     name: 'Te Pātaka o Mangatū', tag: 'COMMUNITY PROJECT · DEMO',
     detail: 'A storehouse for my marae’s data. Everything is encrypted in the browser before it leaves the device, so only the passphrase holder can open an entry.',
     imgs: [{ src: '/img/te-pataka.webp', alt: 'Te Pātaka o Mangatū demo home page' }],
-    url: null, // TODO: add link if live
+    url: 'https://te-pataka-o-mangatu.vercel.app', linkLabel: 'View demo'
   },
   {
     name: 'Phone Ninja', tag: 'SMALL BUSINESS SITE',
@@ -242,7 +242,7 @@ export const projects = [
     name: 'Bush to Browser', tag: 'COURSE',
     detail: 'An 8-week course teaching beginners to build websites with AI, taught by a former tree faller who made the same jump.',
     imgs: [{ src: '/img/bush-to-browser.webp', alt: 'Bush to Browser course home page' }],
-    url: null, // TODO: add link if live
+    url: 'https://bush-to-browser.vercel.app', linkLabel: 'Visit site'
   },
   {
     name: 'turei.dev', tag: 'DEVELOPER PORTFOLIO',
