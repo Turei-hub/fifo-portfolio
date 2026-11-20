@@ -20,6 +20,11 @@ export default function Certificates() {
 
       <section className="flex flex-col gap-3.5">
         <H3>Certificates</H3>
+        <figure className="m-0 bg-panel border border-line rounded-md p-4 flex flex-col gap-3">
+          <img src="/img/certs-desk.webp" alt="Turei's two Mission Ready certificates, Full Stack Developer and Tech Career Launchpad, on his desk under a Congrats Grad banner"
+            loading="lazy" className="w-full max-h-[520px] object-cover rounded block" />
+          <figcaption className="text-mute text-sm">Both Mission Ready certificates on the desk where I study and build.</figcaption>
+        </figure>
         <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
           {certificates.map((c) => (
             <figure key={c.title} className="m-0 bg-panel border border-line rounded-md p-4 flex flex-col gap-3">
