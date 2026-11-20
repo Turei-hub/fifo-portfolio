@@ -5,8 +5,8 @@ import { Icon, btnGhost } from '../components/ui'
 import CvButton from '../components/CvButton'
 
 const tiles = [
-  { to: '/experience', icon: 'tree', title: 'FORESTRY & BUSH', body: 'Tree felling and bush work, grew up on the land in Tairāwhiti.' },
-  { to: '/experience', icon: 'build', title: 'CONSTRUCTION', body: 'On-site construction work, used to physical, safety-first environments.' },
+  { to: '/experience', icon: 'tree', title: 'FORESTRY & BUSH', body: '15 years felling and breaking out in Tairāwhiti forestry.' },
+  { to: '/experience', icon: 'build', title: 'CONSTRUCTION', body: '10+ years on NZ construction sites, working to plans and specs.' },
   { to: '/experience', icon: 'box', title: 'STORES & DISPATCH', body: 'Picking, dispatch and stocktake on the Pronto Xi ERP system.' },
   { to: '/tech', icon: 'code', title: 'SYSTEMS & TECH', body: 'Full stack developer. Learns new systems fast and builds his own.' },
 ]
@@ -16,6 +16,7 @@ export default function Home() {
 
   const facts = [
     ['Based', site.location],
+    ['Experience', '25+ yrs forestry & construction'],
     ['Work type', 'FIFO / DIDO / Residential'],
     ['Targeting', roles.slice(0, 3).map((r) => r.title.replace('Entry Level ', '')).join(' · ')],
     ['Roster', site.roster],

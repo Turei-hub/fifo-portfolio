@@ -20,7 +20,7 @@ export const roles = [
   {
     title: "Driller's Offsider",
     scope: 'Surface or underground, exploration or production drilling.',
-    why: '13 years of hard physical work in forestry. Chainsaw operation and maintenance, cable harvesting break-out and lineshifts. Used to heavy gear, long shifts and small crews.',
+    why: '15 years of hard physical work in forestry, then 10+ in construction. Chainsaw operation and maintenance, cable harvesting break-out and lineshifts. Used to heavy gear, long shifts and small crews.',
     top: true,
   },
   {
@@ -58,7 +58,7 @@ export const strengths = [
 // TODO: fill in years and company names. null values are hidden.
 export const jobs = [
   {
-    dates: null,
+    dates: null, // TODO: year started at Amber Tech
     role: 'Dispatcher',
     place: 'Amber Tech warehouse · Auckland, NZ',
     points: [
@@ -68,32 +68,34 @@ export const jobs = [
     ],
   },
   {
-    dates: null,
+    dates: '2025 – PRESENT',
     role: 'Founder & Full Stack Developer',
     place: 'Kaupeka Digital · Tāmaki Makaurau, NZ',
     points: [
       'Run my own digital studio, building websites and booking systems for small businesses and Māori organisations',
-      'Manage clients, quotes, deadlines and delivery on my own',
+      'Scope projects, manage clients and deliver end to end on my own',
     ],
   },
   {
-    dates: null,
-    role: 'Tree Faller / Bushman',
-    place: 'Commercial forestry · Tairāwhiti, NZ',
+    dates: '2010 – 2025',
+    role: 'Construction Worker',
+    place: 'Construction sites · New Zealand',
     points: [
+      'Read plans and worked to precise specifications on tight deadlines',
+      'Formwork, reinforcing steel, concrete placement, scaffolding and power tools',
+      'Coordinated with other trades under time pressure, with a safety-first attitude on site',
+    ],
+  },
+  {
+    dates: '1995 – 2010',
+    role: 'Tree Faller / Bushman',
+    place: 'Commercial forestry · Mangatū, Tairāwhiti',
+    points: [
+      '15 years in forestry in the Te Aitanga-a-Māhaki rohe',
       'Felled trees with a chainsaw in commercial plantation forestry, including steep country',
       'Broke out on cable harvesting crews and helped plan and carry out lineshifts',
       'Worked on the landing: poleman duties, stem processing, trimming and log making',
       'Maintained chainsaws and gear, and followed the forestry code of practice every day',
-    ],
-  },
-  {
-    dates: null,
-    role: 'Construction Worker',
-    place: 'Construction sites · New Zealand',
-    points: [
-      'Formwork, reinforcing steel and concrete placement',
-      'Scaffolding, power tools and general site work',
     ],
   },
 ]
