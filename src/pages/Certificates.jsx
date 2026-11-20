@@ -1,20 +1,38 @@
-import { tickets, certificates, quals, units } from '../data'
+import { certificates, quals, units } from '../data'
+import { useTickets, expiryInfo, formatDate, toneClass, CATEGORY_LABELS } from '../lib/tickets'
 import { Page, PageHeader, H3 } from '../components/ui'
 
 export default function Certificates() {
+  const tickets = useTickets()
   return (
     <Page title="Certificates">
       <PageHeader eyebrow="TICKETS, LICENCES & QUALIFICATIONS" title="Certificates & achievements" />
 
       <section className="flex flex-col gap-3.5">
         <H3>Tickets &amp; licences</H3>
-        <div className="grid gap-3 grid-cols-[repeat(auto-fit,minmax(240px,1fr))]">
-          {tickets.map((t) => (
-            <div key={t.name} className="bg-panel border border-line rounded-md px-5 py-4 flex flex-col gap-1.5">
-              <span className="font-semibold">{t.name}</span>
-              <span className="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-line">{t.status}</span>
-            </div>
-          ))}
+        <div className="grid gap-3 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+          {tickets.map((t) => {
+            const exp = expiryInfo(t.expires)
+            return (
+              <div key={t.id ?? t.name} className="bg-panel border border-line rounded-md px-5 py-4 flex flex-col gap-2">
+                {t.image_url && (
+                  <a href={t.image_url} target="_blank" rel="noopener" className="block">
+                    <img src={t.image_url} alt={`Photo of ${t.name}`} loading="lazy"
+                      className="w-full aspect-[16/10] object-cover rounded border border-line block" />
+                  </a>
+                )}
+                <span className="text-accent text-xs font-semibold tracking-wider uppercase">
+                  {CATEGORY_LABELS[t.category] || 'Ticket'}{t.issuer ? ` · ${t.issuer}` : ''}
+                </span>
+                <span className="font-semibold">{t.name}</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {t.status && <span className="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-line">{t.status}</span>}
+                  {t.achieved && <span className="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-line">Achieved {formatDate(t.achieved)}</span>}
+                  {exp && <span className={`text-[13px] font-semibold px-2.5 py-0.5 rounded-full ${toneClass[exp.tone]}`}>{exp.label}</span>}
+                </div>
+              </div>
+            )
+          })}
         </div>
       </section>
 

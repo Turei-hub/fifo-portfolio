@@ -10,6 +10,7 @@ import Certificates from './pages/Certificates'
 import Tech from './pages/Tech'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
+import Admin from './pages/Admin'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/certificates" element={<Certificates />} />
           <Route path="/tech" element={<Tech />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

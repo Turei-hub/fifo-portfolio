@@ -31,6 +31,16 @@ Images live in `public/img/`.
    - `CONTACT_FROM` (an address on a Brevo-authenticated domain, e.g. `portfolio@kaupekadigital.com`)
 3. Redeploy. Every push to `main` deploys automatically.
 
+## Admin portal (tureimilner.com/admin)
+
+Add, edit or delete tickets and licences (with dates, expiry and a photo). The Certificates page reads them live.
+
+Setup in Vercel (one time):
+1. **Storage → Create → Neon** (Postgres), connect it to this project. Adds `DATABASE_URL`. The `tickets` table creates and seeds itself.
+2. **Storage → Create → Blob**, connect it to this project. Adds `BLOB_READ_WRITE_TOKEN` for photos.
+3. **Environment Variables → Secret** `ADMIN_PASSWORD` (12+ characters). Changing it logs out every session.
+4. Redeploy.
+
 ## Custom domain
 
 Vercel → Project → **Settings → Domains** → add the domain, then set the DNS records Vercel shows at your registrar.

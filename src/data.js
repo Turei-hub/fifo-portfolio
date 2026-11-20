@@ -100,13 +100,15 @@ export const jobs = [
   },
 ]
 
+// Starting list. Once the database is connected, the live list is managed at /admin
+// and this is only used to seed it (and as a fallback if the database is down).
 export const tickets = [
-  { name: 'NZ Full Driver Licence, Class 1 (Car)', status: 'Current · valid to 2033' },
-  { name: 'Fell trees safely using a chainsaw', status: 'NZQA · Level 3 · 2013' },
-  { name: 'Chainsaw operation & maintenance (commercial forestry)', status: 'NZQA · Level 3 · 2013' },
-  { name: 'ATV / SPV & wheel tractor operation', status: 'NZQA · 2000' },
-  { name: 'First aid (life-threatening & common conditions)', status: 'NZQA 2013 · HLTAID011 refresh planned in WA' },
-  { name: 'White Card (WA)', status: 'To complete on arrival in WA' },
+  { name: 'NZ Full Driver Licence, Class 1 (Car)', category: 'licence', status: 'Current · valid to 2033' },
+  { name: 'Fell trees safely using a chainsaw', category: 'certificate', status: 'NZQA · Level 3 · 2013' },
+  { name: 'Chainsaw operation & maintenance (commercial forestry)', category: 'certificate', status: 'NZQA · Level 3 · 2013' },
+  { name: 'ATV / SPV & wheel tractor operation', category: 'certificate', status: 'NZQA · 2000' },
+  { name: 'First aid (life-threatening & common conditions)', category: 'certificate', status: 'NZQA 2013 · HLTAID011 refresh planned in WA' },
+  { name: 'White Card (WA)', category: 'ticket', status: 'To complete on arrival in WA' },
 ]
 
 export const certificates = [
