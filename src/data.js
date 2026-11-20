@@ -9,7 +9,7 @@ export const site = {
   phone: null, // TODO: AU mobile, e.g. '04xx xxx xxx'
   roster: null, // TODO: e.g. 'Open to 2:1, 8/6 or 7/7'
   startDate: null, // TODO: e.g. 'Immediately' or 'From 5 January 2027'
-  cvUrl: null, // TODO: drop the final PDF in /public and set to '/Turei_Milner_CV.pdf'
+  cvUrl: '/Turei_Milner_CV.pdf', // replace public/Turei_Milner_CV.pdf to update the download
   linkedin: 'https://www.linkedin.com/in/turei-milner-2682b5361/',
   github: 'https://github.com/Turei-hub',
   devPortfolio: 'https://turei.dev',
