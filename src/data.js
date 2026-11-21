@@ -70,7 +70,7 @@ export const jobs = [
   {
     dates: '2025 – PRESENT',
     role: 'Founder & Full Stack Developer',
-    place: 'Kaupeka Digital · Tāmaki Makaurau, NZ',
+    place: 'Kaupeka Digital · Auckland, NZ',
     points: [
       'Run my own digital studio, building websites and booking systems for small businesses and Māori organisations',
       'Scope projects, manage clients and deliver end to end on my own',
