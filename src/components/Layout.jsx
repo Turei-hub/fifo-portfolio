@@ -56,7 +56,7 @@ export default function Layout() {
 
       <footer className="border-t border-line">
         <div className="mx-auto max-w-6xl px-6 py-6 flex flex-wrap justify-between gap-3 text-mute text-sm">
-          <span>{site.fullName} · Nō Mangatū, Tairāwhiti</span>
+          <span>{site.fullName} · From Gisborne, New Zealand</span>
           <span className="flex flex-wrap gap-4">
             <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a>
             <a href={site.github} target="_blank" rel="noopener">GitHub</a>

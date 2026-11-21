@@ -89,9 +89,9 @@ export const jobs = [
   {
     dates: '1995 – 2010',
     role: 'Tree Faller / Bushman',
-    place: 'Commercial forestry · Mangatū, Tairāwhiti',
+    place: 'Commercial forestry · Gisborne, NZ',
     points: [
-      '15 years in forestry in the Te Aitanga-a-Māhaki rohe',
+      '15 years in commercial forestry around Gisborne',
       'Felled trees with a chainsaw in commercial plantation forestry, including steep country',
       'Broke out on cable harvesting crews and helped plan and carry out lineshifts',
       'Worked on the landing: poleman duties, stem processing, trimming and log making',
