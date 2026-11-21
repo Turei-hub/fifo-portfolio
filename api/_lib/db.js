@@ -9,7 +9,8 @@ export const CATEGORIES = ['ticket', 'licence', 'certificate', 'qualification']
 let ready
 
 export function db() {
-  const url = process.env.DATABASE_URL || process.env.POSTGRES_URL
+  const e = process.env
+  const url = e.DATABASE_URL || e.DATABASE_POSTGRES_URL || e.POSTGRES_URL
   if (!url) return null
   return neon(url)
 }
