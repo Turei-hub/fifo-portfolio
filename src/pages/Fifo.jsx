@@ -4,8 +4,8 @@ import { Page, PageHeader, H3, Card, btnPrimary } from '../components/ui'
 
 export default function Fifo() {
   return (
-    <Page title="FIFO / Mining">
-      <PageHeader eyebrow="FIFO / MINING" title="What I bring to site">
+    <Page title="FIFO / DIDO">
+      <PageHeader eyebrow="FIFO / DIDO · MINING" title="What I bring to site">
         Living in Kalgoorlie, so I can get to a FIFO departure or a DIDO site without needing to relocate.
         Used to long days, hard physical work and doing things the safe way.
       </PageHeader>

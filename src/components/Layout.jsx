@@ -5,7 +5,7 @@ import { Icon } from './ui'
 
 const nav = [
   { to: '/', label: 'Home' },
-  { to: '/fifo', label: 'FIFO' },
+  { to: '/fifo', label: 'FIFO/DIDO' },
   { to: '/experience', label: 'Experience' },
   { to: '/certificates', label: 'Certificates' },
   { to: '/tech', label: 'Tech Work' },
